@@ -1,0 +1,23 @@
+.about-me__form
+    .about-me-form__wrap
+        .about-me-form__title
+            .block-title__title.block-title__title-color-gray.block-title__title-smoller Связаться со мной
+        .form-message
+            .form-message__text Сообщение отправлено
+            button.form-message__close Закрыть
+        form(method="post").about-me-form
+            label.about-me-form__name
+                input(type="text" name="name" id="name" placeholder="Имя")
+                .error-message-name Вы не ввели имя
+            label.about-me-form__email
+                input(type="email" name="email" id="email" placeholder="Email")
+                .error-message-email Вы не ввели Email
+            label.about-me-form__textarea
+                textarea(name="message", id="message", cols="30", rows="10", placeholder="Ваше сообщение")
+                .error-message-message Вы не ввели сообщение
+            ul.button-login
+                li.button-login__item
+                    button.submit(type="submit" id="submit") Отправить
+                li.button-login__item
+                    button(type="reset" id="reset") Очистить
+                    

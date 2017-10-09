@@ -1,0 +1,61 @@
+extends ../template
+
+block variables
+    - var title = 'Александр Смирнов | Личный сайт веб разработчика'
+
+block content
+    include ../common/parallax.pug
+        div.container.container-welcome
+            div.welcome-login
+                button(data-toggle-text="На главную").welcome-login__btn.flip-button
+                    span.welcome-login__text Авторизоваться
+            .front.flipInY
+                div.welcome-center
+                    div.welcome-center__foto
+                        img(src="assets/images/img/Alex.jpeg", alt="Александр Смирнов").welcome-center__img
+                    span.welcome-center__name Александр Смирнов
+                    span.welcome-center__option Личный сайт веб разработчика
+                    include ../common/social.pug           
+                    div.button-welcome-fix-fontsize
+                        ul.button-welcome
+                            - 
+                                var buttons = [
+                                    ['Мои работы', '/my-works'],
+                                    ['Обо мне', '/about'],
+                                    ['Блог', '/blog'],
+                                ]
+                            each button in buttons
+                                li.button-welcome__item
+                                    a(href=`${button[1]}`) #{button[0]}
+            .back.hidden.flipInY
+                div.welcome-center
+                    div.welcome-center__wrap-title
+                        .block-title__title.block-title__title-color-white.block-title__title-smoller Авторизуйтесь
+                    div.welcome-center__welcome-form
+                        form(action="#" method="post").welcome-form
+                            label.welcome-form__login
+                                input(type="text" name="login" id="login" placeholder="Логин")
+                            label.welcome-form__password
+                                input(type="password" name="password" id="password" placeholder="Пароль")
+                            label.welcome-form__man
+                                input(type="checkbox", name="man" id="man")
+                                span.welcome-form__label-text Я человек
+                            label.welcome-form__questions Вы точно не робот?
+                            div.welcome-form__radio
+                                label.welcome-form__yes-no
+                                    input(type="radio", name="yes-no" id="yes")
+                                    span.welcome-form__label-text Да
+                                label.welcome-form__yes-no
+                                    input(type="radio", name="yes-no" id="no")
+                                    span.welcome-form__label-text Не уверен
+                    div.button-login__wrap
+                        ul.button-login
+                            li.button-login__item
+                                a(href="/") На главную
+                            li.button-login__item
+                                //- Убрать "a, вернуть "button" после настройки серверной админки
+                                a(href="/admin/") Войти
+                                //- button Войти
+            div.welcome-footer
+                p.welcome-footer__copyright &copy; Александр Смирнов | LoftSchool 2017
+                    

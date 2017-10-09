@@ -1,0 +1,13 @@
+div.welcome-social__wrap
+    ul.welcome-social
+    - 
+        var socials = [
+            ['vk', 'https://vk.com/alexweb', '30', '17'],
+            ['github', 'https://github.com/alexweb79/', '26', '22'],
+            ['in', 'https://linkedin.com/in/alexweb79/', '24', '23'],
+        ]
+    each social in socials
+        li.social__item.social__item-about
+            a(href=`${social[1]}` class=`social__item_${social[0]}`)
+                svg(width=`${social[2]}px` height=`${social[3]}px`)
+                    use( xlink:href=`assets/images/icons/sprite-welcome-icon.svg#${social[0]}`)

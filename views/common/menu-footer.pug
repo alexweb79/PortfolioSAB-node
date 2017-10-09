@@ -1,0 +1,12 @@
+.menu-footer
+    ul.menu-footer__list
+    - 
+        var items = [
+            ['Мои работы', '/my-works'],
+            ['Обо мне', '/about'],
+            ['Блог', '/blog'],
+            ['Авторизация', '/'],
+        ]
+    each item in items
+        li.menu-footer__item
+            a(href=`${item[1]}`).menu-footer__link #{item[0]}

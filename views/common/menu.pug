@@ -1,0 +1,13 @@
+.block__main-menu.hidden
+    .main-menu
+        ul.main-menu__list
+            - 
+                var items = [
+                    ['Мои работы', '/my-works'],
+                    ['Обо мне', '/about'],
+                    ['Блог', '/blog'],
+                    ['Авторизация', '/'],
+                ]
+            each item in items
+                li.main-menu__item
+                    a(href=`${item[1]}`).main-menu__link #{item[0]}

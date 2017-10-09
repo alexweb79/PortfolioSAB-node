@@ -1,0 +1,30 @@
+extends ../template
+
+block variables
+    - var title = 'Мои работы'
+
+block content
+    include ../common/header.pug
+    .triangle
+        .triangle__left
+            svg(width="100%" height="100" viewBox="0 0 900.006 164.986" preserveAspectRatio="none")
+                path(d="M0.01,0l899.997,159.008v854.979H0L0.01,0z").triangle_fill_white
+        .triangle__right
+            svg(width="100%" height="100" viewBox="0 0 900.006 160.986" preserveAspectRatio="none")
+                path(d="M0,155.008L900.331,0l-0.005,1009.986H0V155.008z").triangle_fill_white
+    section.section.my-works
+        .block-title
+            .block-title__bg-my-works
+                .block-title__title.block-title__title-color-black.block-title__title-bigger Мои работы
+        .slider-1#blockDown
+            
+    section.section
+        .about-me
+            .abut-me__title
+                .block-title
+                    .block-title__bg-about-me
+                        .block-title__title.block-title__title-color-black.block-title__title-bigger Что обо мне <br>говорят
+            include ../common/reviews.pug
+            include ../common/my-works-form.pug
+    include ../common/footer.pug
+
